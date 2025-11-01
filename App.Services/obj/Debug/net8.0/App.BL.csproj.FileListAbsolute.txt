@@ -1,0 +1,15 @@
+C:\Users\Lenovo\source\repos\App.Services\bin\Debug\net8.0\App.BL.deps.json
+C:\Users\Lenovo\source\repos\App.Services\bin\Debug\net8.0\App.BL.dll
+C:\Users\Lenovo\source\repos\App.Services\bin\Debug\net8.0\App.BL.pdb
+C:\Users\Lenovo\source\repos\App.Services\obj\Debug\net8.0\App.BL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\source\repos\App.Services\obj\Debug\net8.0\App.BL.AssemblyInfoInputs.cache
+C:\Users\Lenovo\source\repos\App.Services\obj\Debug\net8.0\App.BL.AssemblyInfo.cs
+C:\Users\Lenovo\source\repos\App.Services\obj\Debug\net8.0\App.BL.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\source\repos\App.Services\obj\Debug\net8.0\App.BL.dll
+C:\Users\Lenovo\source\repos\App.Services\obj\Debug\net8.0\refint\App.BL.dll
+C:\Users\Lenovo\source\repos\App.Services\obj\Debug\net8.0\App.BL.pdb
+C:\Users\Lenovo\source\repos\App.Services\obj\Debug\net8.0\ref\App.BL.dll
+C:\Users\Lenovo\source\repos\App.Services\obj\Debug\net8.0\App.BL.csproj.AssemblyReference.cache
+C:\Users\Lenovo\source\repos\App.Services\bin\Debug\net8.0\App.Core.dll
+C:\Users\Lenovo\source\repos\App.Services\bin\Debug\net8.0\App.Core.pdb
+C:\Users\Lenovo\source\repos\App.Services\obj\Debug\net8.0\App.BL.csproj.Up2Date

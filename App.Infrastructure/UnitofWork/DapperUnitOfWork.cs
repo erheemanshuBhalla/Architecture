@@ -1,0 +1,66 @@
+﻿using Architecture_V4.Core.Interfaces;
+using Architecture_V4.Infrastructure.DapperRepositories;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace App.Infrastructure.UnitofWork
+{
+    public class DapperUnitOfWork : IUnitOfWork, IDisposable
+    {
+        private readonly IDbConnection _connection;
+        private IDbTransaction _transaction;
+
+        public IUserRepository Users { get; private set; }
+        public IProductRepository Products { get; private set; }
+
+        private bool _disposed;
+
+        public DapperUnitOfWork(string connectionString)
+        {
+            _connection = new SqlConnection(connectionString);
+            _connection.Open();
+            _transaction = _connection.BeginTransaction();
+
+            Users = new UserRepository(_transaction);
+            Products = new ProductRepository(_transaction);
+        }
+
+        public void Commit()
+        {
+            _transaction.Commit();
+            ResetTransaction();
+        }
+
+        public void Rollback()
+        {
+            _transaction.Rollback();
+            ResetTransaction();
+        }
+
+        private void ResetTransaction()
+        {
+            _transaction.Dispose();
+            _transaction = _connection.BeginTransaction();
+
+            Users = new UserRepository(_transaction);
+            Products = new ProductRepository(_transaction);
+        }
+
+        public void Dispose()
+        {
+            if (!_disposed)
+            {
+                _transaction?.Dispose();
+                _connection?.Dispose();
+                _disposed = true;
+            }
+        }
+    }
+
+
+}
