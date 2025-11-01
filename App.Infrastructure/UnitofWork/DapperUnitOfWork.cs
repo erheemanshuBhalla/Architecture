@@ -1,4 +1,5 @@
-﻿using Architecture_V4.Core.Interfaces;
+﻿using App.Core.Interfaces;
+using Architecture_V4.Core.Interfaces;
 using Architecture_V4.Infrastructure.DapperRepositories;
 using System;
 using System.Collections.Generic;
@@ -20,9 +21,9 @@ namespace App.Infrastructure.UnitofWork
 
         private bool _disposed;
 
-        public DapperUnitOfWork(string connectionString)
+        public DapperUnitOfWork(IDbConnectionFactory connectionFactory)
         {
-            _connection = new SqlConnection(connectionString);
+            _connection = connectionFactory.CreateConnection();
             _connection.Open();
             _transaction = _connection.BeginTransaction();
 

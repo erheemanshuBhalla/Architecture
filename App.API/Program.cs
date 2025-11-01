@@ -1,4 +1,6 @@
-﻿using App.Infrastructure.UnitofWork;
+﻿using App.Core.Interfaces;
+using App.Infrastructure.Data;
+using App.Infrastructure.UnitofWork;
 using Architecture_V4.BusinessLogic.Services;
 using Architecture_V4.Core.Interfaces;
 
@@ -6,11 +8,8 @@ using Architecture_V4.Core.Interfaces;
 var builder = WebApplication.CreateBuilder(args);
 
 // Register UnitOfWork with DI (Scoped per request)
-builder.Services.AddScoped<IUnitOfWork>(sp =>
-{
-    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-    return new DapperUnitOfWork(connectionString);
-});
+builder.Services.AddSingleton<IDbConnectionFactory, SqlConnectionFactory>();
+builder.Services.AddScoped<IUnitOfWork, DapperUnitOfWork>();
 
 // 2️⃣ Add Application Services
 builder.Services.AddScoped<UserService>();
@@ -25,6 +24,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+// Initialize and seed DB
+await DataInitializer.SeedAsync(app.Services);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
