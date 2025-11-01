@@ -48,3 +48,12 @@ App.Web\obj\Debug
 /App.API/obj/Debug/net8.0/rjsmcshtml.dswa.cache.json
 /App.API/obj/Debug/net8.0/rjsmrazor.dswa.cache.json
 /App.API/obj/Debug/net8.0/ref/App.API.dll
+/App.API/obj/App.API.csproj.nuget.dgspec.json
+/App.API/obj/Debug/net8.0/App.API.assets.cache
+/App.API/obj/project.assets.json
+/App.API/obj/project.nuget.cache
+/App.Infrastructure/obj/App.Infrastructure.csproj.nuget.dgspec.json
+/App.Infrastructure/obj/Debug/net8.0/App.Infrastructure.assets.cache
+/App.Infrastructure/obj/project.assets.json
+/App.Infrastructure/obj/project.nuget.cache
+/App.Domain/obj/Debug/net8.0/App.Core.csproj.CoreCompileInputs.cache
