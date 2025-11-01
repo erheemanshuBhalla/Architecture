@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "C0l/e5wKDJQ=",
+  "dgSpecHash": "7BINTDiAl4I=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lenovo\\source\\repos\\App.Infrastructure\\App.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\Lenovo\\source\\repos\\Architecture V4\\App.Infrastructure\\App.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\dapper\\2.1.66\\dapper.2.1.66.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

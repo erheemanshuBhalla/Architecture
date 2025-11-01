@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lenovo\\source\\repos\\App.Domain\\App.Core.csproj": {}
+    "C:\\Users\\Lenovo\\source\\repos\\Architecture V4\\App.Domain\\App.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lenovo\\source\\repos\\App.Domain\\App.Core.csproj": {
+    "C:\\Users\\Lenovo\\source\\repos\\Architecture V4\\App.Domain\\App.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo\\source\\repos\\App.Domain\\App.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Lenovo\\source\\repos\\Architecture V4\\App.Domain\\App.Core.csproj",
         "projectName": "App.Core",
-        "projectPath": "C:\\Users\\Lenovo\\source\\repos\\App.Domain\\App.Core.csproj",
+        "projectPath": "C:\\Users\\Lenovo\\source\\repos\\Architecture V4\\App.Domain\\App.Core.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo\\source\\repos\\App.Domain\\obj\\",
+        "outputPath": "C:\\Users\\Lenovo\\source\\repos\\Architecture V4\\App.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
