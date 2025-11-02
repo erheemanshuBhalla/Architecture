@@ -1,0 +1,66 @@
+﻿-- =============================================================
+-- Create database (optional if you already have one)
+-- =============================================================
+CREATE DATABASE DapperDemo;
+GO
+
+USE DapperDemo;
+GO
+
+-- =============================================================
+-- Drop existing tables (optional, for clean re-run)
+-- =============================================================
+IF OBJECT_ID('dbo.Products', 'U') IS NOT NULL DROP TABLE dbo.Products;
+IF OBJECT_ID('dbo.Users', 'U') IS NOT NULL DROP TABLE dbo.Users;
+GO
+
+-- =============================================================
+-- Users Table
+-- =============================================================
+CREATE TABLE dbo.Users
+(
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(100) NOT NULL,
+    Email NVARCHAR(150) NOT NULL UNIQUE,
+    CreatedAt DATETIME2(3) NOT NULL DEFAULT SYSUTCDATETIME(),
+    UpdatedAt DATETIME2(3) NULL
+);
+GO
+
+-- =============================================================
+-- Products Table
+-- =============================================================
+CREATE TABLE dbo.Products
+(
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(150) NOT NULL,
+    Description NVARCHAR(500) NULL,
+    Price DECIMAL(18,2) NOT NULL,
+    CreatedByUserId INT NOT NULL,
+    CreatedAt DATETIME2(3) NOT NULL DEFAULT SYSUTCDATETIME(),
+
+    CONSTRAINT FK_Products_Users FOREIGN KEY (CreatedByUserId)
+        REFERENCES dbo.Users(Id)
+        ON DELETE CASCADE
+);
+GO
+
+-- =============================================================
+-- Insert Sample Data
+-- =============================================================
+
+-- Demo Users
+INSERT INTO dbo.Users (Name, Email)
+VALUES
+('Alice Johnson', 'alice@demo.com'),
+('Bob Smith', 'bob@demo.com'),
+('Charlie Adams', 'charlie@demo.com');
+
+-- Demo Products
+INSERT INTO dbo.Products (Name, Description, Price, CreatedByUserId)
+VALUES
+('Wireless Mouse', 'Compact ergonomic wireless mouse', 24.99, 1),
+('Mechanical Keyboard', 'RGB backlit mechanical keyboard', 89.99, 2),
+('USB-C Dock', '12-in-1 USB-C docking station', 129.99, 1),
+('Noise Cancelling Headphones', 'Over-ear Bluetooth headphones', 199.00, 3);
+GO
